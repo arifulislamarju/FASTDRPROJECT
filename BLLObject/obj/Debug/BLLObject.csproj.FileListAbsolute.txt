@@ -1,0 +1,5 @@
+E:\Project\FASTDRPROJECT\BLLObject\bin\Debug\BLLObject.dll
+E:\Project\FASTDRPROJECT\BLLObject\bin\Debug\BLLObject.pdb
+E:\Project\FASTDRPROJECT\BLLObject\obj\Debug\ResolveAssemblyReference.cache
+E:\Project\FASTDRPROJECT\BLLObject\obj\Debug\BLLObject.dll
+E:\Project\FASTDRPROJECT\BLLObject\obj\Debug\BLLObject.pdb

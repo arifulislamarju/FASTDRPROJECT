@@ -1,0 +1,263 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ReportMaster Page.master.cs" Inherits="FASTDRPROJECT.Report.ReportMaster_Page" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+
+#left_column
+{
+    position:absolute;
+    height:auto;
+    width:180px;
+    border:0px solid #000000;    
+    float:left;
+    margin:70px 0px 0px 0px;
+    padding-top:0px;
+    /*background-image:url('Images/leftclmnbg.png');*/
+       
+}
+    
+.content 
+{
+  padding-bottom: 1em;
+}
+     
+    
+    .box 
+ {
+  /*background-color: #ffff00;*/
+  border: 1px solid #000000;
+  color: #000000;
+  padding: 0px;
+  position: absolute;
+ }
+
+    .arrowlistmenu
+    {
+    width: 100%; /*width of accordion menu*/
+    margin:0px 0px 0px 0px;
+    
+
+    }
+    .arrowlistmenu .menuheader
+    { /*CSS class for menu headers in general (expanding or not!)*/
+    font-family: Helvetica, Arial, "Sans Serif";
+    color: #1C2529;
+    background: black url('http://localhost:15400/Circulation/Images/titlebar.png') repeat-x left 50%;
+    margin-bottom: 0px; /*bottom spacing between header and rest of content*/
+    text-transform: capitalize;
+    padding: 4px 0 4px 10px; /*header text is indented 10px*/
+    cursor: hand;
+    cursor: pointer;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: normal;
+        }
+    
+    .arrowlistmenu ul
+    { /*CSS for UL of each sub menu*/
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 0px; /*bottom spacing between each UL and rest of content*/
+    }
+
+    .arrowlistmenu ul li
+    {
+    padding-bottom: 2px; /*bottom spacing between menu items*/
+    }
+
+    .arrowlistmenu ul li a
+    {
+    /*color: #A70303;*/
+    color:#2F5A45;
+    background: url('http://localhost:15400/Circulation/Images/arrowbullet.png') no-repeat left 50%; /*custom bullet list image*/
+    display: block;
+    padding-left: 19px; /*link text is indented 19px*/
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #dadada;
+    font-size: 12px;
+            padding-right: 0;
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <form id="form2" runat="server">
+    <div id="container">
+        <div id="header">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+        </div>
+        <div id="left_column" class="box content" onmousedown="dragStart(event)">
+            <div class="arrowlistmenu">
+                <h3 class="menuheader expandable">
+                    User Management</h3>
+                <ul class="categoryitems">
+                    <li><a id="CreateUser" runat="server" 
+                            href="http://localhost:15400/Circulation/user.aspx" visible="false">User</a></li>
+                    <li><a id="userGroup" runat="server" 
+                            href="http://localhost:15400/Circulation/userGroup.aspx" visible="false">
+                        User Group</a></li>
+                    <li><a id="groupAuthorization" runat="server" 
+                            href="http://localhost:15400/Circulation/groupAuthorization.aspx" 
+                            visible="false">Group Authorization</a></li>
+                    <li><a href="#">User Authorization</a>
+                        <%--<li><a href="#">Form CSS</a></li>
+                        <li><a href="#">DIVs and containers</a></li>
+                        <li><a href="#">Links & Buttons</a></li>
+                        <li><a href="#">Other</a></li>
+                        <li><a href="#">Browse All</a></li>--%>                        
+                        </li>
+                </ul>
+                <h3 class="menuheader expandable">
+                    Master Setup</h3>
+                <ul class="categoryitems">
+                    <li><a id="hawkerInfo" runat="server" 
+                            href="http://localhost:15400/Circulation/hawkerInfo.aspx" visible="false">
+                        Agent Information</a></li>
+                    <li><a id="authority" runat="server" 
+                            href="http://localhost:15400/Circulation/Authority.aspx" visible="false">
+                        Employee Hierarchy</a></li>
+                    <li><a id="Distribution" runat="server" 
+                            href="http://localhost:15400/Circulation/Distribution.aspx" visible="false">
+                        Sales Area</a></li>
+                    <li><a id="weeklyRateSetup" runat="server" 
+                            href="http://localhost:15400/Circulation/weeklyRateSetup.aspx" visible="false">
+                        Weekly Rate Setup</a></li>
+                    <li><a id="reasonOfUnsold" runat="server" 
+                            href="http://localhost:15400/Circulation/reasonOfUnsold.aspx" visible="false">
+                        Reason Of Unsold</a></li>
+                    <li><a id="CTPSetup" runat="server" 
+                            href="http://localhost:15400/Circulation/CTPSetup.aspx" visible="false">CTP 
+                        Setup</a></li>
+                    <li><a id="PageSetup" runat="server" 
+                            href="http://localhost:15400/Circulation/PageSetup.aspx" visible="false">
+                        Page Setup</a></li>
+                    <li><a id="CategorySetup" runat="server" 
+                            href="http://localhost:15400/Circulation/CategorySetup.aspx" visible="false">
+                        Category Setup</a></li>
+                </ul>
+                <h3 class="menuheader expandable">
+                    Geography</h3>
+                <ul class="categoryitems">
+                    <li><a id="region" runat="server" 
+                            href="http://localhost:15400/Circulation/region.aspx" visible="false">Region</a></li>
+                    <li><a id="population" runat="server" 
+                            href="http://localhost:15400/Circulation/PopulationInformation.aspx" 
+                            visible="false">Population</a>
+                        <%--<li><a id="importData" visible="false" runat="server" href="importData.aspx">Import Data</a></li>--%>
+                        </li>
+                </ul>
+                <h3 class="menuheader expandable">
+                    Transport Management</h3>
+                <ul class="categoryitems">
+                    <li><a id="route" runat="server" 
+                            href="http://localhost:15400/Circulation/route.aspx" visible="false">Route</a></li>
+                    <li><a id="subRoute" runat="server" 
+                            href="http://localhost:15400/Circulation/subRoute.aspx" visible="false">Sub 
+                        Route</a></li>
+                    <li><a id="vehicle" runat="server" 
+                            href="http://localhost:15400/Circulation/vehicle.aspx" visible="false">
+                        Vehicle</a></li>
+                    <li><a id="TransportSchedule" runat="server" 
+                            href="http://localhost:15400/Circulation/TransportManagement.aspx" 
+                            visible="false">Transport Maintenance</a></li>
+                </ul>
+                <h3 class="menuheader expandable">
+                    Target Management</h3>
+                <ul class="categoryitems">
+                    <li><a id="yearly" runat="server" 
+                            href="http://localhost:15400/Circulation/yearly.aspx" visible="false">Yearly</a></li>
+                    <li><a id="monthly" runat="server" 
+                            href="http://localhost:15400/Circulation/monthly.aspx" visible="false">
+                        Monthly</a></li>
+                    <li><a id="Quarterly" runat="server" 
+                            href="http://localhost:15400/Circulation/Quarterly.aspx" visible="false">
+                        Quarterly</a></li>
+                </ul>
+                <h3 class="menuheader expandable">
+                    Order Management</h3>
+                <ul class="categoryitems">
+                    <li><a id="OrderCapture" runat="server" 
+                            href="http://localhost:15400/Circulation/OrderCapture.aspx" visible="false">
+                        Order Entry</a></li>
+                    <li><a id="copyOrder" runat="server" 
+                            href="http://localhost:15400/Circulation/copyOrder.aspx" visible="false">
+                        Copy Order</a></li>
+                    <li><a id="Quantity_Inc_Dec" runat="server" 
+                            href="http://localhost:15400/Circulation/Quantity_Inc_Dec.aspx" visible="false">
+                        Modify Order</a></li>
+                    <li><a id="ReturnEntry" runat="server" 
+                            href="http://localhost:15400/Circulation/ReturnEntry.aspx" visible="false">
+                        Return Entry</a></li>
+                    <li><a id="RegularModify" runat="server" 
+                            href="http://localhost:15400/Circulation/RegularModify.aspx" visible="false">
+                        Regular Modify</a></li>
+                    <li><a id="ChalanModify" runat="server" 
+                            href="http://localhost:15400/Circulation/ChalanModify.aspx" visible="false">
+                        Chalan Modify</a></li>
+                    <li><a id="OrderSynchronize" runat="server" 
+                            href="http://localhost:15400/Circulation/OrderSynchronization.aspx" 
+                            visible="false">Order Synchronize</a></li>
+                </ul>
+                <h3 class="menuheader expandable">
+                    Competitor Information</h3>
+                <ul class="categoryitems">
+                    <li><a id="CompititorData" runat="server" 
+                            href="http://localhost:15400/Circulation/PaperComparison.aspx" visible="false">
+                        Competitor Name</a></li>
+                    <li><a id="PaperTransaction" runat="server" 
+                            href="http://localhost:15400/Circulation/PaperTransaction.aspx" visible="false">
+                        Competitor Sales</a></li>
+                </ul>
+                <h3 class="menuheader expandable">
+                    Other Activities</h3>
+                <ul class="categoryitems">
+                    <li><a id="AgentDeed" runat="server" 
+                            href="http://localhost:15400/Circulation/ContractDeed.aspx" visible="false">
+                        Agent Deed</a></li>
+                    <li><a id="AgentSalesQuantity" runat="server" 
+                            href="http://localhost:15400/Circulation/AgentSalesQuantity.aspx" 
+                            visible="false">Agent Sales Quantity</a></li>
+                    <li><a id="CTPSchedule" runat="server" 
+                            href="http://localhost:15400/Circulation/CTPSchedule.aspx" visible="false">
+                        CTP Management</a></li>
+                </ul>
+                <h3 class="menuheader expandable">
+                    Reports</h3>
+                <ul class="categoryitems">
+                    <li><a id="rtpLabel" runat="server" 
+                            href="http://localhost:15400/Circulation/rtpLabel.aspx" visible="false">
+                        Print Label</a></li>
+                    <li><a id="UnsoldReport" runat="server" 
+                            href="http://localhost:15400/Circulation/UnsoldReport.aspx" visible="false">
+                        Unsold Report</a></li>
+                    <li><a id="DashBoard" runat="server" 
+                            href="http://localhost:15400/Circulation/Summaryreport.aspx" visible="false">
+                        Dash Board</a></li>
+                    <li><a id="CompetitorSale" runat="server" 
+                            href="http://localhost:15400/Circulation/rptCompetitorSale.aspx" 
+                            visible="false">Competitor Sales</a></li>
+                    <li><a id="TransportReport" runat="server" 
+                            href="http://localhost:15400/Circulation/rptTransportSchedule.aspx" 
+                            visible="true">Transport Report</a></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </form>
+</body>
+</html>

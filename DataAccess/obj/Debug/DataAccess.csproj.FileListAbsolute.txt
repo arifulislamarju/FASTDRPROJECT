@@ -1,0 +1,7 @@
+E:\Project\FASTDRPROJECT\DataAccess\bin\Debug\DataAccess.dll
+E:\Project\FASTDRPROJECT\DataAccess\bin\Debug\DataAccess.pdb
+E:\Project\FASTDRPROJECT\DataAccess\bin\Debug\BLLObject.dll
+E:\Project\FASTDRPROJECT\DataAccess\bin\Debug\BLLObject.pdb
+E:\Project\FASTDRPROJECT\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+E:\Project\FASTDRPROJECT\DataAccess\obj\Debug\DataAccess.dll
+E:\Project\FASTDRPROJECT\DataAccess\obj\Debug\DataAccess.pdb

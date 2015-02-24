@@ -1,0 +1,103 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FASTDRPROJECT.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    FAS Finance &amp; Investment Limited
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                 <asp:Label ID="Label1" runat="server" ></asp:Label>
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        <asp:LinkButton ID="LinkButton1" CausesValidation="False" runat="server" 
+                            onclick="LinkButton1_Click">Log Out</asp:LinkButton>
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Dashboard.aspx" Text="Deposit Home"/>
+                        <asp:MenuItem Text="Deposit Product">
+                            <asp:MenuItem Text="Three Month Profit Scheme" 
+                                Value="Three Month Profit Scheme">
+                                <asp:MenuItem NavigateUrl="~/ThreeMonthSingleDeposit.aspx" 
+                                    Text="Single Deposit Scheme" Value="Single Deposit Scheme"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Semi Annual Profit Scheme" 
+                                Value="Semi Annual Profit Scheme">
+                                <asp:MenuItem NavigateUrl="~/FFIL Semi Annual Profit Scheme/SingleDeposit.aspx" 
+                                    Text="Single Deposit Scheme" Value="Single Deposit Scheme"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Annual Profit Scheme" Value="Annual Profit Scheme">
+                                <asp:MenuItem NavigateUrl="~/FFIL Annual  Profit Scheme/SingleDeposit.aspx" 
+                                    Text="Single Deposit Scheme" Value="Single Deposit Scheme"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Cumulative Profit Scheme" Value="Cumulative Profit Scheme">
+                                <asp:MenuItem NavigateUrl="~/FFIL Cumulative Profit Scheme/SingleDeposit.aspx" 
+                                    Text="Single Deposit Scheme" Value="Single Deposit Scheme"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Earn Ahead Scheme" Value="Earn Ahead Scheme">
+                                <asp:MenuItem NavigateUrl="~/FFIL Earn Ahead Profit Scheme/SingleDeposit.aspx" 
+                                    Text="Single Deposit Scheme" Value="Single Deposit Scheme"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Monthly Profit Earner Scehme" 
+                                Value="Monthly Profit Earner Scehme">
+                                <asp:MenuItem NavigateUrl="~/FFIL Monthly Profit Earner Scheme/SingleDeposit.aspx" 
+                                    Text="Single Deposit Scheme" Value="Single Deposit Scheme"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Quarterly Profit Earner Scheme" 
+                                Value="Quarterly Profit Earner Scheme">
+                                <asp:MenuItem NavigateUrl="~/FFIL Quarterly Profit Earner Scheme/SingleDeposit.aspx" 
+                                    Text="Single Deposit Scheme" Value="Single Deposit Scheme"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Half-Yearly Earner Scheme" 
+                                Value="Half-Yearly Earner Scheme">
+                                <asp:MenuItem NavigateUrl="~/FFIL Half Yearly Profit Earner Scheme/SingleDeposit.aspx" 
+                                    Text="Single Deposit Scheme" Value="Single Deposit Scheme"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Double Money Program" Value="Double Money Program">
+                                <asp:MenuItem NavigateUrl="~/FFIL Double Money Program/SingleDeposit.aspx" 
+                                    Text="Single Deposit Scheme" Value="Single Deposit Scheme"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Triple Money Program" Value="Triple Money Program">
+                                <asp:MenuItem NavigateUrl="~/FFIL Triple Money Program/SingleDeposit.aspx" 
+                                    Text="Single Deposit Scheme" Value="Single Deposit Scheme"></asp:MenuItem>
+                            </asp:MenuItem>
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Deposit Report" Value="Deposit Report">
+                            <asp:MenuItem Text="Client Information" Value="Client Statement" 
+                                NavigateUrl="~/Report/SingleDepositSchemeReport.aspx"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
